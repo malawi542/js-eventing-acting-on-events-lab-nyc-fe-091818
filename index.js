@@ -1,47 +1,42 @@
-const dodger = document.getElementById('dodger')
-
-// dodger.style.bottom = '380px'
-
-function moveDodger(event) {
-  const keycode = event.which
-  console.log(keycode)
-  if (keycode === 37) {
-    // figure out where it is now
-    let oldLeft = dodger.style.left
-    
-    if (oldLeft === '0px') {
-      return
-    }
-    // '180px'
-    
-    console.log(oldLeft)
-    oldLeft = parseInt(oldLeft, 10)
-    // 180 
-    
-    // 170 + 'px'
-    dodger.style.left = (oldLeft - 10) + 'px'
-  } else if (keycode == 39) {
+const dodger=document.getElementById('dodger')
+// let dodgerPosition=0;
+function moveDodger(event){
+  let oldLeft=dodger.style.left
+  const keycode=event.which
+  if(oldLeft==='0px'){
+    return
+  }
+  if(keycode===37){
+    if(oldLeft==='0px'){
+    return
+     }
+    let oldDodger=dodger.style.left
+    oldLeft=parseInt(oldLeft, 10)
+     dodger.style.left=(oldLeft-10) +'px'
+  }
+  else if(keycode===39){
     moveDodgerRight(event)
   }
-}
-
-function moveDodgerRight(event) {
-  if (event.which === 39) {
-    let oldLocation = dodger.style.left
-    // '180px'
-    if (oldLocation === '360px') {
-      return
-    }
+  else if(keycode===38){
     
-    oldLocation = parseInt(oldLocation, 10)
-    // 180
+  }
+  else if(keycode===40){
     
-    dodger.style.left = (oldLocation + 10) + 'px'
+  }
+  else if(keycode===39){
+    
   }
 }
-
-
-
-function moveDodgerRight() {}
-
-document.addEventListener('keydown', moveDodger)
+dodger.style.backgroundColor = '#ff5bab'
+function moveDodgerRight(event){
+  if(event.which===39){
+    let oldLocation=dodger.style.left
+    oldLocation=parseInt(oldLocation,10)
+    dodger.style.left=(oldLocation+10) +'px'
+    if(oldLocation ==="360px"){
+      
+    }
+  }
+}
+document.addEventListener('keydown',moveDodger)
+// dodger.style.left='380px'
